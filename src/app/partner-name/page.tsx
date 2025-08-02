@@ -1,3 +1,6 @@
+"use client";
+// Updated for deployment compatibility
+
 import Button from "@/components/common/Button";
 import Menubar from "@/components/globals/Menubar";
 import React, { useState, useEffect } from "react";
