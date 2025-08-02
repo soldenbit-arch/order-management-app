@@ -1,5 +1,5 @@
 "use client";
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, Suspense} from "react";
 import dynamic from "next/dynamic";
 import FunctionUnit from "./FunctionUnit";
 import TabTotalPrice from "./TabTotalPrice";
@@ -311,7 +311,7 @@ function FunctionsStepsContent() {
     );
 }
 
-function FunctionsSteps() {
+function FunctionsStepsWithParams() {
     const searchParams = useSearchParams();
     const serviceId = parseInt(searchParams.get('service') || '1');
 
@@ -319,6 +319,14 @@ function FunctionsSteps() {
         <FunctionsProvider serviceId={serviceId}>
             <FunctionsStepsContent />
         </FunctionsProvider>
+    );
+}
+
+function FunctionsSteps() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <FunctionsStepsWithParams />
+        </Suspense>
     );
 }
 
