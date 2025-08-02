@@ -1,0 +1,48 @@
+[
+  {
+    "id": "1",
+    "name": "Разработка мобильного приложения",
+    "price": "от 150.000 ₽",
+    "icon": "/images/Linear Video, Audio, Sound  Gallery.svg",
+    "partnerName": "TechPartner",
+    "description": "Создание нативных и кроссплатформенных приложений",
+    "isAvailable": true,
+    "createdAt": "2025-08-01T09:09:01.555Z",
+    "updatedAt": "2025-08-01T09:09:01.555Z"
+  },
+  {
+    "id": "2",
+    "name": "Веб-разработка",
+    "price": "от 80.000 ₽",
+    "icon": "/images/Linear Video, Audio, Sound  Gallery.svg",
+    "partnerName": "WebStudio",
+    "description": "Создание современных веб-сайтов и веб-приложений",
+    "isAvailable": true,
+    "createdAt": "2025-08-01T09:09:01.555Z",
+    "updatedAt": "2025-08-01T09:09:01.555Z"
+  },
+  {
+    "id": "3",
+    "name": "UI/UX дизайн",
+    "price": "от 50.000 ₽",
+    "icon": "/images/Linear Video, Audio, Sound  Gallery.svg",
+    "partnerName": "DesignLab",
+    "description": "Создание пользовательских интерфейсов и опыта",
+    "isAvailable": false,
+    "createdAt": "2025-08-01T09:09:01.555Z",
+    "updatedAt": "2025-08-01T09:16:42.579Z",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ39dkPA2F9XXTngl9AN0aGtmqOX0UxXJQ09A&s",
+    "link": "http://localhost:3000/"
+  },
+  {
+    "id": "1754039418059",
+    "name": "213123",
+    "price": "50000",
+    "icon": "/images/Linear Video, Audio, Sound  Gallery.svg",
+    "partnerName": "21312",
+    "description": "21321",
+    "isAvailable": true,
+    "createdAt": "2025-08-01T09:10:18.059Z",
+    "updatedAt": "2025-08-01T09:10:18.059Z"
+  }
+]
