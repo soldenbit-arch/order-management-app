@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import PricingTable from "./PricingTable";
 import Button from "@/components/common/Button";
