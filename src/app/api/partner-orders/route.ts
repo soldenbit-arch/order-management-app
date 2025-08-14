@@ -25,7 +25,7 @@ async function readOrders(): Promise<Order[]> {
   try {
     const data = await fs.readFile(ordersFilePath, 'utf-8');
     return JSON.parse(data);
-  } catch (error) {
+  } catch {
     return [];
   }
 }
@@ -73,7 +73,7 @@ export async function GET(request: NextRequest) {
       });
       
       return NextResponse.json(partnerOrders);
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: 'Ошибка при получении заказов партнера' },
       { status: 500 }

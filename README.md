@@ -1,41 +1,62 @@
-# Order Management Application
+# Order Management App
 
-Веб-приложение для управления заказами и партнерскими услугами.
+Приложение для управления заказами и партнерскими услугами.
 
 ## Технологии
 
-- Next.js 15.1.7
+- Next.js 15
 - React 19
 - TypeScript
 - Tailwind CSS
 - Framer Motion
 
-## Локальный запуск
+## Локальная разработка
 
 ```bash
+# Установка зависимостей
 npm install
-npm run dev
-```
 
-Приложение будет доступно по адресу: http://localhost:3000
+# Запуск в режиме разработки
+npm run dev
+
+# Сборка для продакшена
+npm run build
+
+# Запуск продакшн версии
+npm start
+```
 
 ## Деплой на Render
 
-1. Загрузите код на GitHub
-2. Подключите репозиторий к Render
-3. Render автоматически определит настройки из `render.yaml`
-4. Приложение будет доступно по адресу: https://your-app-name.onrender.com
+### Через GitHub (рекомендуется)
+
+1. Создайте репозиторий на GitHub
+2. Загрузите код в репозиторий
+3. В Render создайте новый Web Service
+4. Подключите GitHub репозиторий
+5. Настройки:
+   - **Build Command**: `npm install && npm run build`
+   - **Start Command**: `npm start`
+   - **Environment**: `Node`
+   - **Port**: `10000`
+
+### Переменные окружения
+
+- `NODE_ENV`: `production`
+- `PORT`: `10000`
 
 ## Структура проекта
 
-- `src/app/` - страницы и API роуты
-- `src/components/` - React компоненты
-- `public/images/` - изображения и иконки
-- `data/` - JSON файлы с данными
+- `/src/app` - страницы приложения (App Router)
+- `/src/components` - переиспользуемые компоненты
+- `/src/types` - TypeScript типы
+- `/public` - статические файлы
+- `/data` - JSON данные для разработки
 
-## API Endpoints
+## Особенности
 
-- `/api/services` - получение услуг
-- `/api/orders` - управление заказами
-- `/api/partners` - управление партнерами
-- `/api/users` - управление пользователями 
+- Адаптивный дизайн
+- Поддержка мобильных устройств
+- Интеграция с платежными системами
+- Партнерская панель
+- Система заказов 

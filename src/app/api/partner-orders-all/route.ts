@@ -25,7 +25,7 @@ async function readOrders(): Promise<Order[]> {
   try {
     const data = await fs.readFile(ordersFilePath, 'utf-8');
     return JSON.parse(data);
-  } catch (error) {
+  } catch {
     return [];
   }
 }
@@ -39,7 +39,7 @@ export async function GET() {
     const partnerOrders = orders.filter(order => order.partnerName);
     
     return NextResponse.json(partnerOrders);
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: 'Ошибка при получении заказов партнеров' },
       { status: 500 }
@@ -68,7 +68,7 @@ export async function PUT(request: NextRequest) {
 
     await fs.writeFile(ordersFilePath, JSON.stringify(orders, null, 2), 'utf-8');
     return NextResponse.json(orders[orderIndex]);
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: 'Ошибка при обновлении заказа' },
       { status: 500 }
@@ -97,7 +97,7 @@ export async function DELETE(request: NextRequest) {
     await fs.writeFile(ordersFilePath, JSON.stringify(orders, null, 2), 'utf-8');
 
     return NextResponse.json({ success: true });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: 'Ошибка при удалении заказа' },
       { status: 500 }

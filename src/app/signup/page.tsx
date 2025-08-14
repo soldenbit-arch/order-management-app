@@ -1,136 +1,87 @@
 "use client";
+import Button from "@/components/common/Button";
+import {useRouter} from "next/navigation";
+import React, {useState} from "react";
 
-import { useState } from 'react';
-import Link from 'next/link';
+function Signup() {
+    const router = useRouter();
+    const [phoneNumber, setPhoneNumber] = useState("");
 
-export default function SignupPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    password: '',
-    confirmPassword: ''
-  });
+    const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setPhoneNumber(e.target.value);
+    };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Здесь будет логика регистрации
-    console.log('Регистрация:', formData);
-  };
+    const handleContinue = async () => {
+        if (!phoneNumber) return;
+        
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    phone: phoneNumber,
+                    message: 'Регистрация пользователя'
+                })
+            });
 
-  return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          Создать аккаунт
-        </h2>
-        <p className="mt-2 text-center text-sm text-gray-600">
-          Или{' '}
-          <Link href="/" className="font-medium text-indigo-600 hover:text-indigo-500">
-            вернуться на главную
-          </Link>
-        </p>
-      </div>
+            if (response.ok) {
+                router.push("/verification");
+            } else {
+                alert('Ошибка при отправке данных. Попробуйте еще раз.');
+            }
+        } catch (error) {
+            console.error('Ошибка при отправке формы:', error);
+            alert('Ошибка при отправке данных. Попробуйте еще раз.');
+        }
+    };
 
-      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-          <form className="space-y-6" onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                Имя
-              </label>
-              <div className="mt-1">
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  required
-                  value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-                />
-              </div>
+    return (
+        <div className="pb-12">
+            <div className="flex w-full justify-center pt-14">
+                <img className="" src="/images/002 Black.png" alt="" />
             </div>
+            <span className="w-[445px] h-[228px] left-1/2 -translate-x-1/2 bg-[#837FDF] block absolute top-[-100px] -z-20 rounded-full blur-[150px]" />
+            <img
+                src="/images/Frame 166.svg"
+                className="absolute -z-10 top-0 left-1/2 -translate-x-1/2"
+                alt=""
+            />
+            <div className="sm:w-[65%] mx-auto mt-14" role="form">
+                <h1 className="font-semibold text-center text-5xl text-neutral-950 mb-8">
+                    Регистрация
+                </h1>
 
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                Email
-              </label>
-              <div className="mt-1">
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-                />
-              </div>
+                <div>
+                    <div className="mb-5 mx-1">
+                        <b className="text-sm font-normal text-neutral-950 block mb-2">
+                            Номер телефона
+                        </b>
+                        <input
+                            type="text"
+                            placeholder="+7 (999) 999 99 99"
+                            className="text-base shadow-4xl rounded-[10px] p-3.5 placeholder:text-[#0d0d0d]/40 text-[#0d0d0d] w-full"
+                            value={phoneNumber}
+                            onChange={handlePhoneChange}
+                        />
+                    </div>
+                    <p className="text-center text-sm text-neutral-950 mb-20">
+                        Для подтверждения, мы вышлем СМС-код на указанный номер
+                    </p>
+                    <div className="px-2.5 flex justify-center">
+                        <Button
+                            className="w-full sm:w-[65%] flex-grow mx-auto"
+                            disabled={!phoneNumber}
+                            onClick={handleContinue}
+                        >
+                            Продолжить
+                        </Button>
+                    </div>
+                </div>
             </div>
-
-            <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-                Телефон
-              </label>
-              <div className="mt-1">
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  required
-                  value={formData.phone}
-                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                Пароль
-              </label>
-              <div className="mt-1">
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  required
-                  value={formData.password}
-                  onChange={(e) => setFormData({...formData, password: e.target.value})}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">
-                Подтвердите пароль
-              </label>
-              <div className="mt-1">
-                <input
-                  id="confirmPassword"
-                  name="confirmPassword"
-                  type="password"
-                  required
-                  value={formData.confirmPassword}
-                  onChange={(e) => setFormData({...formData, confirmPassword: e.target.value})}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-                />
-              </div>
-            </div>
-
-            <div>
-              <button
-                type="submit"
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-              >
-                Зарегистрироваться
-              </button>
-            </div>
-          </form>
         </div>
-      </div>
-    </div>
-  );
+    );
 }
+
+export default Signup;

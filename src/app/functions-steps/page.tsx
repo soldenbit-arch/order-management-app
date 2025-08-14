@@ -686,14 +686,12 @@ function FunctionsStepsContent() {
     );
 }
 
-export default function FunctionsSteps() {
+function FunctionsSteps() {
     return (
-        <Suspense fallback={
-            <div className="flex justify-center items-center py-8">
-                <div className="text-lg">Загрузка...</div>
-            </div>
-        }>
+        <Suspense fallback={<div>Загрузка...</div>}>
             <FunctionsStepsContent />
         </Suspense>
     );
 }
+
+export default FunctionsSteps;
