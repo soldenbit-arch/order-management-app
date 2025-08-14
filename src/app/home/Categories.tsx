@@ -1,6 +1,5 @@
 "use client";
 import React, {useState, useEffect} from "react";
-import ScrollContainer from "react-indiana-drag-scroll";
 import Link from "next/link";
 import SwipeableTabs from "@/components/common/SwipeableTabs";
 import Dialog from "@/components/common/Dialog";
@@ -72,8 +71,8 @@ function Categories() {
         <div>
             <h4 className="font-semibold text-4xl text-neutral-950 mb-4">Категории</h4>
             <div className="tabs-system overflow-hidden mb-8">
-                <ScrollContainer>
-                    <div className="react-tabs__tab-list mb-2.5">
+                <div className="overflow-x-auto">
+                    <div className="react-tabs__tab-list mb-2.5 flex gap-4 min-w-max">
                         {categories.map((category, index) => (
                             <div
                                 className={`react-tabs__tab ${
@@ -86,7 +85,7 @@ function Categories() {
                             </div>
                         ))}
                     </div>
-                </ScrollContainer>
+                </div>
                 <div className="">
                     {/* Всегда отображаем активную категорию */}
                     {servicesByCategory[activeTab] && (
@@ -112,8 +111,8 @@ function Categories() {
                             </div>
                             {servicesByCategory[activeTab].length > 4 && (
                                 <div className="mt-4">
-                                    <ScrollContainer>
-                                        <div className="flex gap-4 pb-4">
+                                    <div className="overflow-x-auto">
+                                        <div className="flex gap-4 pb-4 min-w-max">
                                             {servicesByCategory[activeTab].slice(4).map((service) => (
                                                 <div
                                                     key={service.id}
@@ -132,7 +131,7 @@ function Categories() {
                                                 </div>
                                             ))}
                                         </div>
-                                    </ScrollContainer>
+                                    </div>
                                 </div>
                             )}
                         </div>
