@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import Button from "@/components/common/Button";
 import React, {useState} from "react";

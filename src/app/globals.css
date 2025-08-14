@@ -20,15 +20,6 @@
   .card {
     @apply bg-white p-6 rounded-lg shadow-lg;
   }
-  
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
 }
 
 body {
