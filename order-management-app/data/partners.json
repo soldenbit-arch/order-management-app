@@ -1,0 +1,30 @@
+[
+  {
+    "id": "partner_001",
+    "name": "Tech Solutions",
+    "email": "info@techsolutions.com",
+    "password": "hashed_password_123",
+    "description": "Компания специализирующаяся на IT решениях и консалтинге",
+    "logo": "/images/tech-solutions-logo.png",
+    "bannerTitle": "Инновационные IT решения",
+    "bannerSubtitle": "Для вашего бизнеса",
+    "bannerImage": "/images/tech-solutions-banner.png",
+    "isActive": true,
+    "createdAt": "2024-01-01T00:00:00Z",
+    "updatedAt": "2024-01-15T00:00:00Z"
+  },
+  {
+    "id": "partner_002",
+    "name": "Creative Studio",
+    "email": "hello@creativestudio.com",
+    "password": "hashed_password_456",
+    "description": "Студия дизайна и креативных решений",
+    "logo": "/images/creative-studio-logo.png",
+    "bannerTitle": "Креативные решения",
+    "bannerSubtitle": "Дизайн, который продает",
+    "bannerImage": "/images/creative-studio-banner.png",
+    "isActive": true,
+    "createdAt": "2024-01-05T00:00:00Z",
+    "updatedAt": "2024-01-15T00:00:00Z"
+  }
+]

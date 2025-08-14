@@ -1,0 +1,20 @@
+[
+  {
+    "id": "user_001",
+    "name": "Алексей Иванов",
+    "email": "alexey@example.com",
+    "phone": "+7 (999) 111-22-33",
+    "isActive": true,
+    "createdAt": "2024-01-10T00:00:00Z",
+    "updatedAt": "2024-01-15T00:00:00Z"
+  },
+  {
+    "id": "user_002",
+    "name": "Елена Козлова",
+    "email": "elena@example.com",
+    "phone": "+7 (999) 444-55-66",
+    "isActive": true,
+    "createdAt": "2024-01-12T00:00:00Z",
+    "updatedAt": "2024-01-15T00:00:00Z"
+  }
+] 

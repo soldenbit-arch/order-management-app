@@ -1,0 +1,41 @@
+[
+  {
+    "id": "ps_001",
+    "name": "SEO оптимизация",
+    "price": "от 30.000 ₽",
+    "icon": "/images/seo-icon.svg",
+    "partnerName": "Tech Solutions",
+    "description": "Комплексная оптимизация сайта для поисковых систем",
+    "isAvailable": true,
+    "imageUrl": "/images/seo-service.png",
+    "link": "/partner-services/seo-optimization",
+    "createdAt": "2024-01-01T00:00:00Z",
+    "updatedAt": "2024-01-15T00:00:00Z"
+  },
+  {
+    "id": "ps_002",
+    "name": "Интеграция с API",
+    "price": "от 50.000 ₽",
+    "icon": "/images/api-icon.svg",
+    "partnerName": "Tech Solutions",
+    "description": "Интеграция вашего приложения с внешними API и сервисами",
+    "isAvailable": true,
+    "imageUrl": "/images/api-integration.png",
+    "link": "/partner-services/api-integration",
+    "createdAt": "2024-01-01T00:00:00Z",
+    "updatedAt": "2024-01-15T00:00:00Z"
+  },
+  {
+    "id": "ps_003",
+    "name": "Брендинг",
+    "price": "от 80.000 ₽",
+    "icon": "/images/branding-icon.svg",
+    "partnerName": "Creative Studio",
+    "description": "Создание уникального бренда и визуальной идентичности",
+    "isAvailable": true,
+    "imageUrl": "/images/branding-service.png",
+    "link": "/partner-services/branding",
+    "createdAt": "2024-01-05T00:00:00Z",
+    "updatedAt": "2024-01-15T00:00:00Z"
+  }
+]

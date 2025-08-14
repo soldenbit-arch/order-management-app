@@ -1,0 +1,28 @@
+[
+  {
+    "id": "order_001",
+    "customerName": "Иван Петров",
+    "customerEmail": "ivan@example.com",
+    "customerPhone": "+7 (999) 123-45-67",
+    "serviceId": 1,
+    "serviceName": "Веб-разработка",
+    "totalPrice": 120000,
+    "status": "pending",
+    "message": "Нужен корпоративный сайт для компании с админ панелью",
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "id": "order_002",
+    "customerName": "Мария Сидорова",
+    "customerEmail": "maria@example.com",
+    "customerPhone": "+7 (999) 987-65-43",
+    "serviceId": 3,
+    "serviceName": "UI/UX Дизайн",
+    "totalPrice": 75000,
+    "status": "in_progress",
+    "message": "Дизайн мобильного приложения для доставки еды",
+    "createdAt": "2024-01-14T14:30:00Z",
+    "updatedAt": "2024-01-15T09:15:00Z"
+  }
+]

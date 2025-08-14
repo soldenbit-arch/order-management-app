@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Веб-разработка",
+    "category": "IT",
+    "price": "100 000 ₽ +",
+    "description": "Создание современных веб-приложений с использованием передовых технологий",
+    "image": "/images/web-development.png",
+    "features": ["React", "Node.js", "TypeScript", "Responsive Design"]
+  },
+  {
+    "id": 2,
+    "name": "Мобильная разработка",
+    "category": "IT",
+    "price": "150 000 ₽ +",
+    "description": "Разработка нативных и кроссплатформенных мобильных приложений",
+    "image": "/images/mobile-development.png",
+    "features": ["iOS", "Android", "React Native", "Flutter"]
+  },
+  {
+    "id": 3,
+    "name": "UI/UX Дизайн",
+    "category": "Креатив",
+    "price": "50 000 ₽ +",
+    "description": "Создание интуитивных и красивых интерфейсов для веб и мобильных приложений",
+    "image": "/images/design.png",
+    "features": ["Figma", "Adobe XD", "Прототипирование", "User Research"]
+  }
+] 
