@@ -20,12 +20,21 @@
   .card {
     @apply bg-white p-6 rounded-lg shadow-lg;
   }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 body {
     font-size: 16px;
     line-height: normal;
-    @apply font-manrope text-neutral-900 bg-[rgb(249,_249,_249)];
+    @apply font-sans text-neutral-900 bg-[rgb(249,_249,_249)];
 }
 
 input,
@@ -43,7 +52,7 @@ textarea {
 }
 
 .tabs-system .react-tabs__tab {
-    @apply font-semibold text-md text-neutral-950 rounded-lg bg-white shadow-4xl block px-3 py-2 cursor-pointer outline-0 duration-200;
+    @apply font-semibold text-base text-neutral-950 rounded-lg bg-white shadow-lg block px-3 py-2 cursor-pointer outline-0 duration-200;
 }
 
 .tabs-system .react-tabs__tab--selected {

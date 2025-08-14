@@ -1,6 +1,5 @@
 "use client";
 import React, {useState, useEffect} from "react";
-import ScrollContainer from "react-indiana-drag-scroll";
 import Link from "next/link";
 import SwipeableTabs from "@/components/common/SwipeableTabs";
 import Dialog from "@/components/common/Dialog";
@@ -72,8 +71,8 @@ function Categories() {
         <div>
             <h4 className="font-semibold text-4xl text-neutral-950 mb-4">Категории</h4>
             <div className="tabs-system overflow-hidden mb-8">
-                <ScrollContainer>
-                    <div className="react-tabs__tab-list mb-2.5">
+                <div className="overflow-x-auto scrollbar-hide">
+                    <div className="react-tabs__tab-list mb-2.5 flex whitespace-nowrap">
                         {categories.map((category, index) => (
                             <div
                                 className={`react-tabs__tab ${
@@ -86,7 +85,7 @@ function Categories() {
                             </div>
                         ))}
                     </div>
-                </ScrollContainer>
+                </div>
                 <div className="">
                     {/* Всегда отображаем активную категорию */}
                     {servicesByCategory[activeTab] && (
@@ -112,27 +111,26 @@ function Categories() {
                             </div>
                             {servicesByCategory[activeTab].length > 4 && (
                                 <div className="mt-4">
-                                    <ScrollContainer>
-                                        <div className="flex gap-4 pb-4">
-                                            {servicesByCategory[activeTab].slice(4).map((service) => (
-                                                <div
-                                                    key={service.id}
-                                                    role="button"
-                                                    onClick={() => handleServiceClick(service)}
-                                                    className="flex flex-col justify-end items-center text-center w-36 flex-shrink-0"
-                                                >
-                                                    <img
-                                                        className="mb-2.5 w-28 h-28 object-contain"
-                                                        src={service.image}
-                                                        alt={service.name}
-                                                    />
-                                                    <p className="font-extrabold text-md text-neutral-950 text-center break-words">
-                                                        {service.name}
-                                                    </p>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </ScrollContainer>
+                                    {/* ScrollContainer removed, replaced with simple div */}
+                                    <div className="flex gap-4 pb-4">
+                                        {servicesByCategory[activeTab].slice(4).map((service) => (
+                                            <div
+                                                key={service.id}
+                                                role="button"
+                                                onClick={() => handleServiceClick(service)}
+                                                className="flex flex-col justify-end items-center text-center w-36 flex-shrink-0"
+                                            >
+                                                <img
+                                                    className="mb-2.5 w-28 h-28 object-contain"
+                                                    src={service.image}
+                                                    alt={service.name}
+                                                />
+                                                <p className="font-extrabold text-md text-neutral-950 text-center break-words">
+                                                    {service.name}
+                                                </p>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
                             )}
                         </div>
