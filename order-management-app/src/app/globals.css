@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-size: 16px;
+    line-height: normal;
+    @apply font-manrope text-neutral-900 bg-[rgb(249,_249,_249)];
+}
+
+input,
+button,
+textarea {
+    outline: 0;
+}
+
+.device-container {
+    @apply max-w-[600px] mx-auto;
+}
+
+.tabs-system .react-tabs__tab-list {
+    @apply flex space-x-2 whitespace-nowrap;
+}
+
+.tabs-system .react-tabs__tab {
+    @apply font-semibold text-md text-neutral-950 rounded-lg bg-white shadow-4xl block px-3 py-2 cursor-pointer outline-0 duration-200;
+}
+
+.tabs-system .react-tabs__tab--selected {
+    @apply font-bold bg-[#6F35FF] text-white duration-200;
+}
+
+.text-linear {
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.4) 18.97%,
+        rgba(255, 255, 255, 0) 82.76%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

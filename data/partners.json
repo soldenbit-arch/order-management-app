@@ -1,0 +1,30 @@
+[
+  {
+    "id": "test-partner-1",
+    "name": "Тестовый партнер",
+    "email": "test@partner.com",
+    "password": "password",
+    "description": "Безопасность, разработка приложений, сайтов",
+    "logo": "/images/Remove-bg.ai_1732383936587 1.png",
+    "bannerTitle": "ываываавы",
+    "bannerSubtitle": "Качественные IT-решения для вашего бизнеса",
+    "bannerImage": "/images/Remove-bg.ai_1732383936587 1.png",
+    "isActive": true,
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2025-08-06T18:36:20.677Z"
+  },
+  {
+    "id": "1754674412705",
+    "email": "123@mail.ru",
+    "password": "123",
+    "name": "123",
+    "description": "123",
+    "logo": "/images/Remove-bg.ai_1732383936587 1.png",
+    "bannerTitle": "123",
+    "bannerSubtitle": "123",
+    "bannerImage": "/images/Remove-bg.ai_1732383936587 1.png",
+    "isActive": true,
+    "createdAt": "2025-08-08T17:33:32.705Z",
+    "updatedAt": "2025-08-08T17:33:32.705Z"
+  }
+]
