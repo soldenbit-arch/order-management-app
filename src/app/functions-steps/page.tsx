@@ -1,11 +1,11 @@
 "use client";
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, Suspense} from "react";
 import FunctionUnit from "./FunctionUnit";
 import TabTotalPrice from "./TabTotalPrice";
 import SwipeableTabs from "@/components/common/SwipeableTabs";
 import { useSearchParams } from "next/navigation";
 
-function FunctionsSteps() {
+function FunctionsStepsContent() {
     const [currentStep, setCurrentStep] = useState(0);
     const searchParams = useSearchParams();
 
@@ -686,4 +686,14 @@ function FunctionsSteps() {
     );
 }
 
-export default FunctionsSteps;
+export default function FunctionsSteps() {
+    return (
+        <Suspense fallback={
+            <div className="flex justify-center items-center py-8">
+                <div className="text-lg">Загрузка...</div>
+            </div>
+        }>
+            <FunctionsStepsContent />
+        </Suspense>
+    );
+}
